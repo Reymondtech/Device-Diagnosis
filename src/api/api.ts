@@ -6,7 +6,7 @@ export async function diagnoseAI(device: string, problem: string) {
       "Authorization": `Bearer ${import.meta.env.VITE_GROQ_KEY}`
     },
     body: JSON.stringify({
-      model: "llama3-8b-8192",
+      model: "llama-3.1-8b-instant",
       messages: [
         {
           role: "user",
@@ -25,10 +25,15 @@ export async function diagnoseAI(device: string, problem: string) {
   const data = await response.json();
 
   const content = data.choices?.[0]?.message?.content;
-
+  const extractedContent = extractCorrectJson(content)
+  console.log({extractedContent});
   try {
-    return JSON.parse(content);
+    return JSON.parse(extractedContent);
   } catch {
     return { error: "AI returned invalid JSON", raw: content };
   }
+}
+function extractCorrectJson (incorrectJson) {
+  const correctJson = incorrectJson.slice(incorrectJson.indexOf('{'), incorrectJson.lastIndexOf('}')+1)
+  return correctJson
 }

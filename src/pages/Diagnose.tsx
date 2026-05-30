@@ -13,6 +13,8 @@ export default function Diagnose() {
   const { loading, error, request } = useFetch();
   const navigate = useNavigate();
 
+  
+
   const onSubmit = async (data: any) => {
     const result = await request(() =>
       diagnoseAI(device!, data.problem)
@@ -20,6 +22,7 @@ export default function Diagnose() {
 
     if (result) {
       setDiagnosis(result);
+      console.log(result)
       navigate("/result");
     }
   };
