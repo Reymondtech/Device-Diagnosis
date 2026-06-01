@@ -15,7 +15,9 @@ export async function diagnoseAI(device: string, problem: string) {
             device +
             ". Problem: \"" +
             problem +
-            "\". Return ONLY valid JSON with keys: explanation, cause, solution, severity, safeToUse."
+            "\". Return ONLY valid JSON with the following structure: " +
+            "{ explanation: string, cause: string, solution: string, severity: \"Low\" | \"Medium\" | \"High\", safeToUse: \"Yes\" | \"No\" }. " +
+            "Do not include anything outside the JSON."
         }
       ],
       temperature: 0.2
