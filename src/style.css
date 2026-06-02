@@ -73,3 +73,15 @@ button {
 button:hover {
   background: #005fcc;
 }
+.result-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.result-card h3 {
+  margin-top: 20px;
+  color: #0078ff;
+}

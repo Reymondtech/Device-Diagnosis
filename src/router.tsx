@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Diagnose from "./pages/Diagnose";
 import Result from "./pages/Result";
 
+// Define the application routes
 export const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/diagnose/:device", element: <Diagnose /> },

@@ -7,8 +7,8 @@ import { diagnoseAI } from "../api/api";
 
 
 export default function Diagnose() {
-  const { device } = useParams();
-  const { setDiagnosis } = useContext(AppContext);
+  const { device } = useParams(); 
+  const { setDiagnosis } = useContext(AppContext); 
   const { register, handleSubmit } = useForm();
   const { loading, error, request } = useFetch();
   const navigate = useNavigate();

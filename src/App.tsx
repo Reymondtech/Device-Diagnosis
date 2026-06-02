@@ -3,6 +3,7 @@ import { router } from "./router";
 import { AppProvider } from "./context/AppContext";
 import "./style.css";
 
+// Main App component that sets up the context and routing
 export default function App() {
   return (
     <AppProvider>
